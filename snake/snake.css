@@ -7,13 +7,13 @@ font-family: 'Open Sans',sans-serif;
 }
 
 .full-site{
-    background: rgb(200, 132, 166);
+    background: #458D8D;
     
     justify-content: center;
     min-height: 100vh;
 }
 .description{
-    background: rgb(200, 132, 166);
+    background: #458D8D;
     margin-right: 110px;
     margin-left: 110px;
 }
@@ -24,7 +24,7 @@ font-family: 'Open Sans',sans-serif;
     display : flex;
     flex-direction: column;
     overflow: hidden;
-    background: rgb(176, 208, 211);
+    background: #000;
 }
 .game-details{
     color :rgb(0, 0, 0);
@@ -33,13 +33,16 @@ font-family: 'Open Sans',sans-serif;
     padding: 10px 27px;
     display:flex;
     justify-content: space-between;
-    background-color: #6C3A5C;
+    background-color: #2f8ca3;
 }
 .play-board{
     height: 100%;
     width: 100%;
     display: grid;
     grid-template: repeat(30,1fr)/repeat(30,1fr);
+}
+.play-board .food {
+  background-color: #2f8ca3;
 }
 footer {
     background-color: rgb(0, 0, 0);
@@ -60,7 +63,7 @@ body {
 }
 
 header {
-  background: #55d6aa;
+  background:#193f4a;
 }
 
 header::after {
@@ -75,7 +78,7 @@ header::after {
 }
 
 nav {
-  float: right;
+  float: left;
 }
 
 nav ul {
@@ -93,7 +96,7 @@ nav li {
 }
 
 nav a {
-  color: #444;
+  color: #fffffe;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
