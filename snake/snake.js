@@ -9,7 +9,7 @@ const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 let isInGame = false;
 let isSnakeAlive = true;
-let foodX = 20, foodY = 15;
+let foodX = 40, foodY = 15;
 let snakeX = 2, snakeY = 2;
 let snakeBody = [];
 let velocityX = 0, velocityY = 0;
@@ -18,7 +18,7 @@ let score = 0;
 let highScore = 4;
 
 const changeFoodPosition = () => {
-    foodX = Math.floor(Math.random() * 30) + 1
+    foodX = Math.floor(Math.random() * 60) + 1
     foodY = Math.floor(Math.random() * 30) + 1
     score++;
     scoreElement.innerText = `Score: ${score}`;
@@ -57,20 +57,20 @@ const gameOver = () => {
     for (let i = 0; i < snakeBody.length + 1;i++){
     snakeBody.pop()
     }
-    foodX = 20, foodY = 15;
+    foodX = 40, foodY = 15;
     
-    alert("Game Over");
+    
     
     if (score > highScore){
         highScore = score;
-        highScoreElement.innerText = `Score: ${highScore}`;
+        highScoreElement.innerText = `High Score: ${highScore}`;
     }
     score = 0;
     scoreElement.innerText = `Score: ${score}`;
     isSnakeAlive = true;
 }
 
-
+let firstLoad = true;
 const initGame = () =>{
     if (isSnakeAlive && isMoving){
     isInGame = true;
@@ -79,7 +79,7 @@ const initGame = () =>{
         isMoving = true;
     }
 
-    if (isInGame == true){
+    if (firstLoad == true){
         scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop;
@@ -92,6 +92,7 @@ const initGame = () =>{
         window.onscroll = function () {
             window.scrollTo(scrollLeft, scrollTop);
         };
+        firstLoad = false;
     }
     
     let htmlMarkup = `<div class = "food" style = "grid-area: ${foodY} / ${foodX}"></div>`;
@@ -105,7 +106,7 @@ const initGame = () =>{
         snakeBody[i] = snakeBody[i-1];
     }
     snakeBody[0] = [snakeX, snakeY];
-    if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30){
+    if (snakeX <= 0 || snakeX > 60 || snakeY <= 0 || snakeY > 30){
         
        gameOver();
 
@@ -119,5 +120,5 @@ const initGame = () =>{
     playBoard.innerHTML = htmlMarkup;
 }
 
-setInterval(initGame,100);
+setInterval(initGame,50);
 document.addEventListener("keydown", changeDirection);
