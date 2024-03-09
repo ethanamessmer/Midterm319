@@ -42,7 +42,9 @@ font-family: 'Open Sans',sans-serif;
     grid: 50% / auto auto;
 }
 .play-button{
-    
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 footer {
     background-color: rgb(0, 0, 0);
