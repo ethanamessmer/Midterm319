@@ -8,9 +8,11 @@ const memoryA = document.getElementById("memoryA");
 const memoryB = document.getElementById("memoryB");
 const memoryC = document.getElementById("memoryC");
 const memoryD = document.getElementById("memoryD");
+const scoreText = document.getElementsByClassName("score")[0];
+const highscoreText = document.getElementsByClassName("high-score")[0];
 
 let score = 0;
-let highScore = 4;
+let highScore = 0;
 let pattern = [];
 let highlightQueue = [];
 let progress = 0;
@@ -28,6 +30,7 @@ const gameOver = () => {
     alert("Game over!");
     if(score>highScore){
         highScore = score;
+        highscoreText.textContent = "High Score: "+ highScore;
     }
     score = 0;
     progress = 0;
@@ -67,11 +70,13 @@ const highlight = (index) => {
 const memoryClick = (index) => {
     if(highlightQueue.length==0){
         if(index == pattern[progress]){
-            highlight();
+            highlight(index);
             if(progress == score){
                 progress = 0;
                 score++;
-                setPattern();
+                setTimeout(function(){
+                    setPattern();
+                }, 500);                
             } else {
                 progress++;
             }
@@ -88,4 +93,5 @@ setInterval(function(){
     if(highlightQueue.length!=0){
         highlight(highlightQueue.shift());
     }
+    scoreText.textContent = "Score: " + score;
 }, 750);
