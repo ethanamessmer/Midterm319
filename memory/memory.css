@@ -39,7 +39,12 @@ font-family: 'Open Sans',sans-serif;
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template: repeat(30,1fr)/repeat(30,1fr);
+    grid: 50% / auto auto;
+}
+.play-button{
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 footer {
     background-color: rgb(0, 0, 0);
