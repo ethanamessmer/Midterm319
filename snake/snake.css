@@ -18,7 +18,7 @@ font-family: 'Open Sans',sans-serif;
     margin-left: 110px;
 }
 .wrapper{
-    width: 65vmin;
+    width: 130vmin;
     height:70vmin;
     border-radius: 5px;
     display : flex;
@@ -39,8 +39,9 @@ font-family: 'Open Sans',sans-serif;
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template: repeat(30,1fr)/repeat(30,1fr);
+    grid-template: repeat(30,1fr)/repeat(60,1fr);
 }
+
 .play-board .food {
   background-color: #2f8ca3;
 }

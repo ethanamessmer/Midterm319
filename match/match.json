@@ -1,0 +1,12 @@
+{
+    "cardIcons": [
+    {
+        "id" : "darkGreen",
+        "img" : "./DarkGreen.png"
+},
+   {
+    "id" : "Purple",
+    "img" : "./Purple.png"
+}
+]
+}
