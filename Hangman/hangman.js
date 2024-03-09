@@ -20,7 +20,7 @@ fetch("./hangman.json")
 
 
 
-let currWord, wrongCount = 0,currHint,correctLetters;
+let currWord, wrongCount = 0,currHint,correctLetters = 0;
 const maxGuesses = 6;
 
 function loadRandWord (randWords){
@@ -31,7 +31,7 @@ function loadRandWord (randWords){
     console.log(currWord);
     console.log(currHint);
     word.innerHTML = currWord.split("").map(() => `<li class = "letter"></li>`).join();
-   
+   console.log("The length of the word is " + currWord.length)
 }
 
 const reset = () => {
@@ -63,6 +63,16 @@ const gameOver = (isVictory) => {
 
     const inGame = (button,clickedLetter) => {
         if(currWord.includes(clickedLetter)){
+            for (let i = 0; i < currWord.length;i++){
+                if (clickedLetter == currWord[i]){
+                    correctLetters++;
+                    
+                }
+                console.log(correctLetters)
+
+            }
+            //correctLetters += currWord.match(clickedLetter).length;
+            //console.log(correctLetters);
             [...currWord].forEach((letter,index) => {
                 if(letter === clickedLetter){
                     word.querySelectorAll("li")[index].innerText = letter;
@@ -76,7 +86,7 @@ const gameOver = (isVictory) => {
         button.disabled=true;
         guesses.innerText = `${wrongCount} / ${maxGuesses}`;
         if(wrongCount == maxGuesses) return gameOver(false);
-        
+        if (correctLetters == currWord.length) return gameOver(true);
     }
 
 
