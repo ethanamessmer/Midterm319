@@ -12,20 +12,16 @@ const memoryD = document.getElementById("memoryD");
 let score = 0;
 let highScore = 4;
 let pattern = [];
+let highlightQueue = [];
 let progress = 0;
-let unlocked = true;
 
 const setPattern = () => {
-    unlocked = false;
     let target = Math.floor(Math.random() * 4);
     pattern.push(target);
     console.log(pattern);
     for(let i = 0; i<=score; i++){
-        setTimeout(function(){
-            highlight(i);
-        }, 500);
+        highlightQueue.push(pattern[i]);
     }
-    unlocked = true;
 }
 
 const gameOver = () => {
@@ -47,11 +43,29 @@ const highlight = (index) => {
                 memoryA.style.backgroundColor="darkblue";
             }, 500);
             break;
+        case 1:
+            memoryB.style.backgroundColor="orchid";
+            setTimeout(function(){
+                memoryB.style.backgroundColor="darkorchid";
+            }, 500);
+            break;
+        case 2:
+            memoryC.style.backgroundColor="red";
+            setTimeout(function(){
+                memoryC.style.backgroundColor="darkred";
+            }, 500);
+            break;
+        case 3:
+            memoryD.style.backgroundColor="green";
+            setTimeout(function(){
+                memoryD.style.backgroundColor="darkgreen";
+            }, 500);
+            break;
     } 
 }
 
 const memoryClick = (index) => {
-    if(unlocked){
+    if(highlightQueue.length==0){
         if(index == pattern[progress]){
             highlight();
             if(progress == score){
@@ -70,3 +84,8 @@ const memoryClick = (index) => {
 setTimeout(function(){
     setPattern();
 }, 500);
+setInterval(function(){
+    if(highlightQueue.length!=0){
+        highlight(highlightQueue.shift());
+    }
+}, 750);
