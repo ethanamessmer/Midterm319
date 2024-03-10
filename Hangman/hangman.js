@@ -32,6 +32,19 @@ function loadRandWord (randWords){
     console.log(currHint);
     word.innerHTML = currWord.split("").map(() => `<li class = "letter"></li>`).join();
    console.log("The length of the word is " + currWord.length)
+   scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop;
+    scrollLeft =
+        window.pageXOffset ||
+        document.documentElement.scrollLeft,
+
+        // if any scroll is attempted,
+        // set this to the previous value
+        window.onscroll = function () {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+        
 }
 
 const reset = () => {
