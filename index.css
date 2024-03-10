@@ -6,7 +6,7 @@ box-sizing: border-box;
 font-family: 'Open Sans',sans-serif;
 }
 .full-site{
-    background: lightgreen;
+    background: #2f8ca3;
     justify-content: center;
     min-height: 100vh;
 }
@@ -49,7 +49,7 @@ body {
 }
 
 header {
-  background: #55d6aa;
+  background: #193f4a;
 }
 
 header::after {
@@ -64,7 +64,7 @@ header::after {
 }
 
 nav {
-  float: right;
+  float: left;
 }
 
 nav ul {
@@ -82,7 +82,7 @@ nav li {
 }
 
 nav a {
-  color: #444;
+  color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
