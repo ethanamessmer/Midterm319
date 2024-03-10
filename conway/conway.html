@@ -16,7 +16,7 @@
           <nav>
             <ul>
               <li><a href="../index.html">Home</a></li>
-              <li><a href="../match/match.html">Match</a></li>
+              <li><a href="../Hangman/hangman.html">Match</a></li>
               <li><a href="../memory/memory.html">Memory</a></li>
               <li><a href="../snake/snake.html">Snake</a></li>
             </ul>
@@ -28,12 +28,17 @@
     <div class="game">
     <div class = "wrapper">
         <div class="game-details"></div>
-        <div class="play-board"></div>
+        <div class="play-board" id="play-board"></div>
     </div>
 </div>
 
 <div class="description"> <!--TODO: Conway description-->
-<p><Strong style="font-size: large;">Controls:</Strong><br><strong style="font-size: large;">Description:</strong><br>Conway game description goes here. <br><br><br><br><br><br><br><br><br><br><br></p>
+  <p><Strong style="font-size: large;">Controls: Click on cells to toggle them. Cells automatically update every three seconds following the rules below:</Strong></p>
+  <ul>
+    <li>Live cells die with fewer than two neighbors or greater than three neighbors.</li>
+    <li>Dead cells are born into with exactly three neighbors.</li>
+  </ul>
+  <br><strong style="font-size: large;">Description:</strong><br>Conway's Game of Life is a cellular automaton designed by John Conway in 1970.<br><br><br><br><br><br><br><br><br><br><br></p>
 </div>
  <footer>
     <h1>This is the footer to the website
