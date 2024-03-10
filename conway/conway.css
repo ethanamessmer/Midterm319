@@ -39,7 +39,21 @@ font-family: 'Open Sans',sans-serif;
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template: repeat(30,1fr)/repeat(30,1fr);
+    grid-template: 5% / auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+  }
+.conway-living{
+    height: 15px;
+    width: 15px;
+    background: lightgreen;
+}
+.conway-dead{
+    height: 15px;
+    width: 15px;
+    background: darkgreen;
 }
 footer {
     background-color: rgb(0, 0, 0);
