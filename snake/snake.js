@@ -17,14 +17,14 @@ let isMoving = false;
 let score = 0;
 let highScore = 4;
 
-const changeFoodPosition = () => {
+const changeFoodPosition = () => { //a random food placement
     foodX = Math.floor(Math.random() * 60) + 1
     foodY = Math.floor(Math.random() * 30) + 1
     score++;
     scoreElement.innerText = `Score: ${score}`;
 }
 
-const changeDirection = (key) => {
+const changeDirection = (key) => { //the controls for the game
     if (key.key == "ArrowRight" && isSnakeAlive && velocityX != -1){
         velocityX = 1;
         velocityY = 0;
@@ -46,7 +46,7 @@ const changeDirection = (key) => {
     }
   
 }
-const gameOver = () => {
+const gameOver = () => { //sets everything up for the next game and checks for a new high score
     isSnakeAlive = false;
     isMoving = false;
     isIngame = false;
@@ -71,7 +71,7 @@ const gameOver = () => {
 }
 
 let firstLoad = true;
-const initGame = () =>{
+const initGame = () =>{ //not really initializing it's moreso every frame while the game is running.
     if (isSnakeAlive && isMoving){
     isInGame = true;
     }
@@ -120,5 +120,5 @@ const initGame = () =>{
     playBoard.innerHTML = htmlMarkup;
 }
 
-setInterval(initGame,50);
+setInterval(initGame,50);//sets the speed for the game.
 document.addEventListener("keydown", changeDirection);
