@@ -7,13 +7,13 @@ font-family: 'Open Sans',sans-serif;
 }
 
 .full-site{
-    background: rgb(132, 153, 200);
+    background: #458D8D;
     
     justify-content: center;
     min-height: 100vh;
 }
 .description{
-    background: rgb(132, 153, 200);
+    background: #458D8D;
     margin-right: 110px;
     margin-left: 110px;
 }
@@ -33,7 +33,7 @@ font-family: 'Open Sans',sans-serif;
     padding: 10px 27px;
     display:flex;
     justify-content: space-between;
-    background-color: #6C3A5C;
+    background-color: #2f8ca3;
 }
 .play-board{
     height: 100%;
