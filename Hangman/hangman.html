@@ -1,1 +1,98 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman game</title>
+    <link rel="stylesheet" href="hangman.css">
+    <script src = "hangman.js" defer></script>
+</head>
+<body>
+  <!--
+    Author: Ethan
+    NetId: emessmer
+    Date: 3/4/2024
+  -->
+    <header>
+        <div class="NavBar">
+          <h1 class="logo"></h1>
+    
+          <nav>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../memory/memory.html">Memory</a></li>
+              <li><a href="../snake/snake.html">Snake</a></li>
+              <li><a href="../conway/conway.html">Game of life</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <center class = "full-site">
+    <header>Hangman</header>
+    <div class = "game-model">
+        <div class="contents">
+            <img src = "#" alt = "gif">
+            <h4>Game Over!</h4>
+            <p>The right word was: <strong></strong></p>
+            <button class = "play-again" onclick="location.reload()">Play Again</button>
+        </div>
+    </div>
+    <div class="game">
+        <div class = "hangman-box">
+            <img src="images/hangman-0.svg" draggable="false" alt = "hangman0-img">
+        </div>
+        <div class = "game-box">
+            <ul class = "word">
+                <li class = "letter"></li>
+                <li class = "letter"></li>
+                <li class = "letter"></li>
+                <li class = "letter"></li>
+                <li class = "letter"></li>
+                <li class = "letter"></li>
+                <li class = "letter"></li>
+            </ul>
+            <h4 class="hint">Hint: <strong></strong></h4>
+            <h4 class="guess">Incorrect Guesses: <strong>0 / 6</strong></h4>
+            <div class = "keyboard">
+               <!-- <button >a</button>
+                <button >b</button>
+                <button >c</button>
+                <button >d</button>
+                <button >e</button>
+                <button >f</button>
+                <button >g</button>
+                <button >h</button>
+                <button >i</button>
+                <button >j</button>
+                <button >k</button>
+                <button >l</button>
+                <button >m</button>
+                <button >n</button>
+                <button >o</button>
+                <button >p</button>
+                <button >q</button>
+                <button >r</button>
+                <button >s</button>
+                <button >t</button>
+                <button >u</button>
+                <button >v</button>
+                <button >w</button>
+                <button >x</button>
+                <button >y</button>
+                <button >z</button>-->
+            </div>
+        </div>
+
+    </div>
+    </div>
+<div class = "description"><br>Though the origins of Hangman are unknown, a variant is mentioned in a book of children's games assembled by Alice Gomme in 1894 called Birds, Beasts, and Fishes. This version lacks the image of a hanged man, instead relying on keeping score as to the number of attempts it took each player to fill in the blanks. (History taken from <a href = "https://en.wikipedia.org/wiki/Hangman_(game)">wikepedia</a>)<br><br><br><br><br><br><br><br><br><br></div>
+
+ <footer>
+    <p>TCopyright (c) 2023 Iastate All rights reserved. <a href="../about.html">About us</a><br>.
+ </p>
+ </footer>
+    </center>
+</body>
+</html>
+
